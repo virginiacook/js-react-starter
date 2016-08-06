@@ -28,5 +28,11 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('bundle.css'),
   ],
-
+  //add to webpack.config.js
+  devServer: {
+    port: 8080,
+    historyApiFallback: {
+      index: 'index.html',
+    },
+  },
 };
