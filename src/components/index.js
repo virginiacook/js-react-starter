@@ -20,7 +20,8 @@ class Index extends Component {
   }
   renderPosts() {
     return this.props.posts.map((post) => {
-      return <div style={{marginBottom: 30}}><Link className="postContainer"to={`/posts/${post.id}`} key={post.id} ><div className="linkText" style={{fontFamily: 'Montserrat', fontSize: 20, fontWeight: 'bold', marginBottom: 5}}>{post.title}</div></Link><div style={{fontFamily: 'Montserrat', fontSize: 15}}>Tags: {post.tags}</div></div>;
+      var tagz = post.tags.join(" ");
+      return <div style={{marginBottom: 30}}><Link className="postContainer"to={`/posts/${post.id}`} key={post.id} ><div className="linkText" style={{fontFamily: 'Montserrat', fontSize: 20, fontWeight: 'bold', marginBottom: 5}}>{post.title}</div></Link><div style={{fontFamily: 'Montserrat', fontSize: 15}}>Tags: {tagz}</div></div>;
     });
   }
   render() {

@@ -2,7 +2,7 @@ import { ActionTypes } from '../actions';
 
 const postsReducer = (posts = {
   all: [],
-  post: {title: '', content: '', tags: ''},
+  post: {title: '', content: '', tags: ['']},
   }, action) => {
   switch (action.type) {
     case ActionTypes.FETCH_POSTS:

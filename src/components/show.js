@@ -39,11 +39,13 @@ class Show extends Component {
     }
     else{
       this.setState({ error: '' });
+      var tagSplit = this.state.tags.split(" ");
+
       const post = {
         id: this.props.params.id,
         title: this.state.title,
         content: this.state.content,
-        tags: this.state.tags
+        tags: tagSplit
       };
       this.props.updatePost(post);
       this.setState({isEditing: false});
@@ -58,11 +60,15 @@ class Show extends Component {
       this.setState({isEditing: true});
     }
   }
+  renderTag(tag){
+    return <div>{tag} hi</div>;
+  }
   renderPost(){
     if(this.state.isEditing){
+      var tagz = this.props.post.tags.join(" ");
       return <div style={{fontFamily: 'Montserrat', margin: 10}}><div><div>{"Title"}</div><Textarea onChange={this.onTitleChange} id="title">{this.props.post.title}</Textarea></div>
         <div><div>{"Content"}</div><Textarea onChange={this.onContentChange} id="content">{this.props.post.content}</Textarea></div>
-        <div><div>{"Tags"}</div><Textarea onChange={this.onTagsChange} id="tags">{this.props.post.tags}</Textarea>
+        <div><div>{"Tags"}</div><Textarea onChange={this.onTagsChange} id="tags">{tagz}</Textarea>
         </div>
         <div style={{color:'red'}}>
           {this.state.error}
@@ -72,9 +78,10 @@ class Show extends Component {
     }
     else{
       this.state.title = this.props.post.title;
-      this.state.tags = this.props.post.tags;
+      this.state.tags = this.props.post.tags.join(" ");
       this.state.content = this.props.post.content;
-      return <div style={{fontFamily: 'Montserrat', margin: 10}}><div style={{fontSize: 20, fontWeight:'bold', marginBottom:5}}>{this.props.post.title}</div><div style={{color: 'black', marginBottom: 10}}>{this.props.post.content}</div><div>Tags: {this.props.post.tags}</div>
+      var tagz = this.props.post.tags.join(" ");
+      return <div style={{fontFamily: 'Montserrat', margin: 10}}><div style={{fontSize: 20, fontWeight:'bold', marginBottom:5}}>{this.props.post.title}</div><div style={{color: 'black', marginBottom: 10}}>{this.props.post.content}</div><div>Tags: {tagz}</div>
         <div style={{marginTop:20}}><i className="fa fa-pencil-square-o fa-2x" onClick={this.onIsEditing} style={{color: 'black', marginRight: 30}} /><i className="fa fa-trash fa-2x" style={{color: 'black', marginRight: 10}} onClick={this.onDeletePost} /></div></div>;
     }
   }
