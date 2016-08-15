@@ -1,8 +1,8 @@
 import { browserHistory } from 'react-router'
 import axios from 'axios';
 
-const ROOT_URL = 'http://localhost:9090/api';
-//const ROOT_URL = 'https://blogserver2.herokuapp.com/api';
+//const ROOT_URL = 'http://localhost:9090/api';
+const ROOT_URL = 'https://blogserver2.herokuapp.com/api';
 //const API_KEY = '?key=vcook';
 
 export const ActionTypes = {
