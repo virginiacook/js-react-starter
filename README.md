@@ -1,4 +1,4 @@
-# js-starter with react
+# Simple Blog
 
 This project allows a user to create a blog with various posts that contain a title, content, and tags. I implemented all of the baseline features. I had some trouble initially understanding how various redux components fit into react, but eventually got the hang of it.
 
