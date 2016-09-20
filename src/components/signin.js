@@ -47,7 +47,7 @@ class Signin extends Component {
           {this.state.error}
         </div>
         <div>
-          <button style={{ fontFamily: 'Montserrat', fontSize: 15, borderRadius: 10, padding: 10, marginTop: 20, color: 'white', backgroundColor: 'black' }} onClick={this.onSignin}>Sign Up!</button>
+          <button style={{ fontFamily: 'Montserrat', fontSize: 15, borderRadius: 10, padding: 10, marginTop: 20, color: 'white', backgroundColor: 'black' }} onClick={this.onSignin}>Sign In!</button>
         </div>
       </div>
     );
